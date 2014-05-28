@@ -22,6 +22,19 @@
         todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.todo = model;
 
+            todoApp.filter("checkedItems", function () {
+               return function (items, showComplete) {
+                   var resultArr = [];
+                   angular.forEach(items, function (item) {
+                       if (item.done == false || showComplete == true) {
+                           resultArr.push(item);
+                       }
+                   });
+
+                   return resultArr;
+               }
+            });
+
             $scope.incompleteCount = function () {
                 var count = 0;
                 angular.forEach($scope.todo.items, function (item) {
