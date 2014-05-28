@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html data-ng-app>
+<html ng-app="todoApp">
 <head>
     <title>TO DO List</title>
-
     <meta charset="UTF-8">
-    <title></title>
     <link rel="stylesheet" href="bootstrap.css"/>
     <link rel="stylesheet" href="bootstrap-theme.css"/>
+    <script src="angular.js"></script>
+    <script>
+        var todoApp = angular.module("todoApp", []);
+    </script>
 </head>
 <body>
 <div class="page-header">
@@ -19,7 +21,6 @@
             <button class="btn btn-default">Add</button>
         </span>
     </div>
-
     <table class="table table-striped">
         <thead>
         <tr>
